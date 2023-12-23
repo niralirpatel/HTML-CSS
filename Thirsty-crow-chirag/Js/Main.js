@@ -1,6 +1,10 @@
 let ImageArray = ["1", "2", "3", "4"];
 let shuffleImg = shuffleArr([...ImageArray]);
 
+
+
+
+
 intial();
 function intial() {
   document.getElementById("loadingdiv").innerHTML = Loadingmaker();
@@ -76,13 +80,13 @@ function Potmaker() {
             <img id="icrease" src="./Image/stone5.png">
             <img id="Pimg" src="./Image/New_folder/1.png"/>
             <img id="default" src="./Image/New_folder/water_step/1.png"/>
-          <img id="show" src="./Image/New_folder/water_step/2.png"/>
+            <img id="show" src="./Image/New_folder/water_step/2.png"/>
 
-          <img id="show1" src="./Image/New_folder/3.png"/>
-          <img id="show2" src="./Image/New_folder/4.png"/>
-          <img id="show3" src="./Image/New_folder/5.png"/>
-          <img id="show4" src="./Image/New_folder/6.png"/>
-          <img id="show5" src="./Image/New_folder/7.png"/>
+            <img id="show1" src="./Image/New_folder/water_step/3.png"/>
+            <img id="show2" src="./Image/New_folder/water_step/4.png"/>
+            <img id="show3" src="./Image/New_folder/water_step/5.png"/>
+            <img id="show4" src="./Image/New_folder/water_step/6.png"/>
+            <img id="show5" src="./Image/New_folder/water_step/7.png"/>
 
 
             </div>
@@ -101,6 +105,27 @@ function Potmaker() {
 //   currentImage.classList.add("hide");
 //   nextImage.classList.remove("hide");
 // }
+
+
+
+
+
+
+
+// let imageIds = ["show", "show1", "show2", "show3", "show4", "show5"];
+
+// let imageSrcs = [
+//   "./Image/New_folder/water_step/2.png",
+//   "./Image/New_folder/water_step/3.png",
+//   "./Image/New_folder/water_step/4.png",
+//   "./Image/New_folder/water_step/5.png",
+//   "./Image/New_folder/water_step/6.png",
+//   "./Image/New_folder/water_step/7.png"
+// ];
+
+// let images1 = document.querySelectorAll('img');
+// let imageIds1 = Array.from(images).map(img => img.id);
+// let imageSrcs1 = Array.from(images).map(img => img.src);
 
 function switchImages(currentId, nextId) {
   let currentImage = document.getElementById(currentId);
@@ -154,8 +179,14 @@ function Crowing2() {
   isStoneCrow2 = !isStoneCrow2;
 }
 
+let images = document.querySelectorAll('#StoneCrow2');
 
 
+// images.forEach(img => {
+//   img.addEventListener('click', () => {
+//     show1.classList('#show1');
+//   });
+// });
 
 
 
