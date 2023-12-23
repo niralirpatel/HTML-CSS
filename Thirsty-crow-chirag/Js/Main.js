@@ -167,7 +167,7 @@ function Crowing2() {
   if (isStoneCrow2) {
     
     switchImages("StoneCrow1", "StoneCrow2");
-    showWater();
+    // showWater();
     switchImages("StoneCrow1", "StoneImg1");
     
   } else {
@@ -181,6 +181,7 @@ function Crowing2() {
 
 let images = document.querySelectorAll('#StoneCrow1');
 let blockElements = [
+  document.getElementById('show'),
   document.getElementById('show1'),
   document.getElementById('show2'),
   document.getElementById('show3'),
@@ -196,19 +197,23 @@ images.forEach(img => {
   img.addEventListener('click', function() {
    
     blockElements.forEach(block => block.style.display = 'none');
-    blockElements[currentBlockIndex].style.display = 'block';
+    // blockElements[currentBlockIndex].style.display = 'block';
+    default1.style.display="none";
     currentBlockIndex = (currentBlockIndex + 1) % blockElements.length;
+
+    blockElements[currentBlockIndex].style.display = 'block';
   });
 });
 
+let default1=document.getElementById('default');
 
-function showWater() {
-  let show=document.getElementById('show');
-  let default1=document.getElementById('default');
-  show.style.display="block";
-  default1.style.display="none";
+// function showWater() {
+//   let show=document.getElementById('show');
+//   
+//   show.style.display="block";
+//   
 
-}
+// }
 
 
 
