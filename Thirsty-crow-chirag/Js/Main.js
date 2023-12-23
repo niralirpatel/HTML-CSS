@@ -80,13 +80,13 @@ function Potmaker() {
             <img id="icrease" src="./Image/stone5.png">
             <img id="Pimg" src="./Image/New_folder/1.png"/>
             <img id="default" src="./Image/New_folder/water_step/1.png"/>
-            <img id="show" src="./Image/New_folder/water_step/2.png"/>
+            <img id="show" class="block" src="./Image/New_folder/water_step/2.png"/>
 
-            <img id="show1" src="./Image/New_folder/water_step/3.png"/>
-            <img id="show2" src="./Image/New_folder/water_step/4.png"/>
-            <img id="show3" src="./Image/New_folder/water_step/5.png"/>
-            <img id="show4" src="./Image/New_folder/water_step/6.png"/>
-            <img id="show5" src="./Image/New_folder/water_step/7.png"/>
+            <img id="show1" class="block" src="./Image/New_folder/water_step/3.png"/>
+            <img id="show2" class="block" src="./Image/New_folder/water_step/4.png"/>
+            <img id="show3" class="block" src="./Image/New_folder/water_step/5.png"/>
+            <img id="show4" class="block" src="./Image/New_folder/water_step/6.png"/>
+            <img id="show5" class="block" src="./Image/New_folder/water_step/7.png"/>
 
 
             </div>
@@ -179,17 +179,27 @@ function Crowing2() {
   isStoneCrow2 = !isStoneCrow2;
 }
 
-let images = document.querySelectorAll('#StoneCrow2');
+let images = document.querySelectorAll('#StoneCrow1');
+let blockElements = [
+  document.getElementById('show1'),
+  document.getElementById('show2'),
+  document.getElementById('show3'),
+  document.getElementById('show4'),
+  document.getElementById('show5')
+];
 
 
-// images.forEach(img => {
-//   img.addEventListener('click', () => {
-//     show1.classList('#show1');
-//   });
-// });
+let currentBlockIndex = 0;
 
 
-
+images.forEach(img => {
+  img.addEventListener('click', function() {
+   
+    blockElements.forEach(block => block.style.display = 'none');
+    blockElements[currentBlockIndex].style.display = 'block';
+    currentBlockIndex = (currentBlockIndex + 1) % blockElements.length;
+  });
+});
 
 
 function showWater() {
@@ -201,16 +211,11 @@ function showWater() {
 }
 
 
-function showWater1() {
-  let show1=document.getElementById('show1');
-  show1.style.display="block";
-}
+
 
 function Crowing3() {
   if (isStoneCrow2) {
     switchImages("StoneCrow2", "StoneCrow");
-    show.style.display="none";
-    showWater1();
     switchImages("StoneCrow1", "StoneImg2");
     
   } else {

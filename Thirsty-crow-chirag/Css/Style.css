@@ -358,3 +358,11 @@ height: 30px;
   left: 63%;
   display:block ;
 }
+
+.block {
+  display: none;
+}
+
+.show-block {
+  display: block;
+}
