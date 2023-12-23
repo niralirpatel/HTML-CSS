@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:rgb(155, 158, 154);
+}
+#svgContainer {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+.container {
+    width: 97%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.main_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    gap: 10px;
+}
+.Icon{
+    
+    margin-left: 84%;
+    margin-top: 5px;
+    z-index: 99;
+}
+.fa-volume-high{
+    font-size: 40px;
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 8%;
+    background-color: rgb(211, 40, 40);
+    box-shadow: 5px 5px rgb(125, 34, 34);
+    line-height: 60px;
+    text-align: center;
+    margin-right: 10px;
+}
+.fa-circle-info{
+    font-size: 40px;
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 8%;
+    background-color: rgb(52, 171, 47);
+    box-shadow: 5px 5px rgb(26, 100, 24);
+    line-height: 60px;
+    text-align: center;
+    margin-right: 10px;    
+}
+.fa-house{
+    font-size: 40px;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 8%;
+    background-color: rgb(187, 181, 60);
+    box-shadow: 5px 5px rgb(105, 102, 29);
+    line-height: 60px;
+    text-align: center;
+    margin-right: 10px;
+}
+.fa-expand {
+    font-size: 40px;
+    color: #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 8%;
+    background-color: rgb(51, 66, 224);
+    box-shadow: 5px 5px rgb(31, 37, 98);
+    line-height: 60px;
+    text-align: center;
+    margin-right: 10px;
+   
+}
+/* #LeftSide{
+    text-align: center;
+    display: block;
+    margin: auto;
+} */
