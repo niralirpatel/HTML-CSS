@@ -100,9 +100,9 @@ h1 {
   width: 300px;
   /* background-color: white; */
   position: absolute;
-  top: 20%;
-  left: 70%;
-  transform: translate(-50px, -50px);
+  top: 18%;
+  left: 63%;
+  /* transform: translate(-50px, -50px); */
   /* opacity: 0.8; */
 }
 
@@ -284,4 +284,58 @@ h1 {
 position: absolute;
 width: 30px;
 height: 30px;
+}
+
+
+
+
+#main_div{
+  position: relative;
+}
+
+#show{
+  width: 295px;
+  height: 263px;
+  position: absolute;
+  top: 24%;
+  left: 63%;
+  display: none;
+}
+
+#show1{
+  width: 340px;
+    height: 500px;
+    position: absolute;
+    top: -13%;
+    left: 61%;
+    display: none;
+}
+
+#show2{
+  width: 415px;
+  height: 900px;
+  position: absolute;
+  top: -76%;
+  left: 58%;
+  display: none;
+}
+
+#show3{
+  width: 415px;
+  height: 900px;
+  position: absolute;
+  top: -76%;
+  left: 58%;
+  display: block;
+}
+
+
+
+#default{
+  width: 295px;
+  height: 263px;
+  position: absolute;
+  top: 24%;
+  left: 63%;
+  display:none ;
 }
