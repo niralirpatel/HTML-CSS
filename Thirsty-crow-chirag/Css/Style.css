@@ -350,6 +350,23 @@ height: 30px;
 }
 
 
+#stone_set{
+  width: 250px;
+    height: 300px;
+    position: absolute;
+    top: 43%;
+    left: 35%;
+}
+
+#stone{
+  width: 30px;
+  position: absolute;
+  height: 30px;
+  bottom: 36%;
+  right: 22%;
+  z-index: 9;
+}
+
 #default{
   width: 295px;
   height: 263px;
