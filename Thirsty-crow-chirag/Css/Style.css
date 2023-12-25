@@ -405,12 +405,11 @@ height: 30px;
   z-index: 9;
 }
 
-/* #ImgShow{
-  position: relative;
+#ImgShow{
+
   width: 200px;
   height: 40px;
- background-color: blue
- ;
+ background-color: blue;
   bottom: 38%;
   right: 14%;
-} */
+}
