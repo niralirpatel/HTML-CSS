@@ -197,13 +197,17 @@ images.forEach(img => {
   img.addEventListener('click', function() {
    
     blockElements.forEach(block => block.style.display = 'none');
-    // blockElements[currentBlockIndex].style.display = 'block';
+    
     default1.style.display="none";
     currentBlockIndex = (currentBlockIndex + 1) % blockElements.length;
 
     blockElements[currentBlockIndex].style.display = 'block';
   });
 });
+
+
+
+
 
 let default1=document.getElementById('default');
 
