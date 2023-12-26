@@ -1,10 +1,56 @@
 let ImageArray = ["1", "2", "3", "4"];
 let shuffleImg = shuffleArr([...ImageArray]);
 
+let waterlevel = 1;
+
 intial();
 function intial() {
   document.getElementById("loadingdiv").innerHTML = Loadingmaker();
   GetEl("#bird").innerHTML = bgimg();
+
+  let waterelms = document.querySelectorAll(".potwater");
+  let temp = [...waterelms];
+  // console.log(waterelms);
+  waterelms = temp.slice(0, 4);
+  waterelms = shuffleArr([...waterelms]);
+
+  waterelms[0].classList.remove("hide");
+  console.log(waterelms[0].getAttribute("check-water"));
+  waterlevel = waterelms[0].getAttribute("check-water");
+  document.querySelectorAll(".kagdo").forEach((element) => {
+    element.addEventListener("click", crowChange);
+  });
+}
+
+function crowChange() {
+  let id = event.target.getAttribute("id");
+
+  switch (id) {
+    case "kagdo1":
+      document.getElementById("kagdo1").classList.add("hide");
+      document.getElementById("kagdo2").classList.add("show");
+      break;
+    case "kagdo2":
+      document.getElementById("kagdo2").classList.add("hide");
+      document.getElementById("kagdo2").classList.remove("show");
+      document.getElementById("kagdo3").classList.add("show");
+      break;
+    case "kagdo3":
+      document.getElementById("kagdo2").classList.add("hide");
+      document.getElementById("kagdo2").classList.remove("show");
+      document.getElementById("kagdo3").classList.add("show");
+      document.getElementById("kagdo3").classList.remove("show");
+      document.getElementById("kagdo4").classList.add("show");
+      document.getElementById("kagdo4").classList.remove("show");
+      document.getElementById("kagdo2").classList.add("show");
+      stoneMake();
+      break;
+    case "kagdo4":
+      break;
+  }
+
+  // kagdo1
+  console.log();
 }
 
 function bgimg() {
@@ -14,13 +60,40 @@ function bgimg() {
   <image id="bgimg" href="./image/Bg.jpg" width="1920" height="1080" />
   
   <foreignObject id="" class="" x="0" y="0" width="1920" height="1080">
-  ${Potmaker()}
+  
   </foreignObject>
 
-  <foreignObject id="" class="" x="1200" y="650" width="300" height="200">
-  
-  
-  </foreignObject>
+
+
+
+    <image id="" x="900" y="700" width="400" href="./Image/stone.svg"/>
+    <image id="" x="480" y="495" width="330" href="./Image/New_folder/1.png" />
+
+        <image id="stone1" class="stone" check-water="1"  x="580" y="880" width="20" href="./Image/stone1.png" />
+        <image id="stone2" class="stone"  check-water="2" x="600" y="880" width="20" href="./Image/stone1.png" />
+        <image id="stone3" class="stone"  check-water="3" x="660" y="880" width="20" href="./Image/stone1.png" />
+        <image id="stone4" class="stone"  check-water="4" x="680" y="880" width="20" href="./Image/stone1.png" />
+        <image id="stone5" class="stone"  check-water="5" x="640" y="880" width="20" href="./Image/stone1.png" />
+    
+     <image class="potwater hide" check-water="1" x="480" y="495" width="330" href="./Image/New_folder/water_step/2.png" />
+    <image class="potwater hide" check-water="2" x="480" y="495" width="330" href="./Image/New_folder/water_step/3.png" />
+    <image class="potwater hide" check-water="3" x="480" y="495" width="330" href="./Image/New_folder/water_step/4.png" />
+    <image class="potwater hide" check-water="4" x="480" y="495" width="330" href="./Image/New_folder/water_step/5.png" />
+    <image class="potwater hide" check-water="5" x="480" y="495" width="330" href="./Image/New_folder/water_step/6.png" />
+    <image class="potwater hide" check-water="6" x="480" y="495" width="330" href="./Image/New_folder/water_step/7.png" />
+    
+
+
+      <svg>
+      </svg>
+      <image id="kagdo1" class="kagdo" x="1520" y="650" width="400" href="./Image/crow1.svg"/>
+      <image id="kagdo2" class="kagdo hide" x="1220" y="650" width="300" href="./Image/stone-crow.svg"/>
+      <image id="kagdo3" class="kagdo hide" x="570" y="345" width="250" href="./Image/stone-crow.svg"/>
+      <image id="kagdo4" class="kagdo hide" x="570" y="345" width="250" href="./Image/stone-crow1.svg"/>
+    
+
+
+ 
   
   </svg>
   </svg>`);
@@ -52,144 +125,52 @@ function hideLoadingScreen() {
   loadingScreen.style.display = "none";
 }
 
-function Potmaker() {
-  return `
-        <div id="main_div"
-      
-        <div id="Pothome" style="height: 600px; width: 1100px; position: absolute; top: 43%; left: 25%;">
-        <div id="mainCrow">
-        <img id="CRimg" onclick="Crowing()" src="./Image/crow1.svg"/>
-        
-    </div>   
-        
-        
- 
-            <img id="StoneCrow" onclick="Crowing1()" class="hide" src="./Image/stone-crow.svg">
-            
-            <div id="parent_div">
-            <img id="StoneCrow1" onclick="Crowing2()" class="hide" src="./Image/stone-crow.svg">
-            <img id="StoneCrow2" onclick="Crowing3()" class="hide" src="./Image/stone-crow1.svg">
-             <img id="stone_set" src="./Image/stone.svg">
-            
-             
-            <img id="Pimg" src="./Image/New_folder/1.png"/>
-            <div id="ImgShow"></div>
-           
-            <img id="default" src="./Image/New_folder/water_step/1.png"/>
-            <img id="show" class="block" src="./Image/New_folder/water_step/2.png"/>
+function stoneMake() {
+  let blockElements = [
+    document.getElementById("stone1"),
+    document.getElementById("stone2"),
+    document.getElementById("stone3"),
+    document.getElementById("stone4"),
+    document.getElementById("stone5"),
+    document.getElementById("stone6"),
+  ];
 
-            <img id="show1" class="block" src="./Image/New_folder/water_step/3.png"/>
-            <img id="show2" class="block" src="./Image/New_folder/water_step/4.png"/>
-            <img id="show3" class="block" src="./Image/New_folder/water_step/5.png"/>
-            <img id="show4" class="block" src="./Image/New_folder/water_step/6.png"/>
-            <img id="show5" class="block" src="./Image/New_folder/water_step/7.png"/>
-            
+  let blockElements1 = [...blockElements];
 
-            </div>
-            
-            
-            </div>
-          
-        </div>
-        </div>`;
-}
+  blockElements1[0].getAttribute("check-water");
 
-function switchImages(currentId, nextId) {
-  let currentImage = document.getElementById(currentId);
-  let nextImage = document.getElementById(nextId);
+  let currentIndex = 0;
 
-  if (currentImage && nextImage) {
-    currentImage.classList.add("hide");
+  let kagdo2 = document.getElementById("kagdo2");
+  let waterelms = document.querySelectorAll(".potwater");
+  kagdo2.addEventListener("click", function () {
+    
+    if (waterelms??waterlevel === blockElements1) {
 
-    nextImage.classList.remove("hide");
-  } else {
-    // console.error("One or both of the elements with the provided IDs do not exist.");
-  }
-}
-
-function Crowing() {
-  switchImages("CRimg", "StoneCrow");
-}
-
-function Crowing1() {
-  document.getElementById("");
-  switchImages("StoneCrow", "StoneCrow1");
-}
-
-let isStoneCrow2 = true;
-
-let waterImgIndex = 1;
-
-function Crowing2() {
-  if (isStoneCrow2) {
-    switchImages("StoneCrow1", "StoneCrow2");
-    // showWater();
-    switchImages("StoneCrow1", "StoneImg1");
-  } else {
-    switchImages("StoneCrow1", "StoneImg2");
-    switchImages("StoneCrow2", "StoneCrow");
-  }
-
-  isStoneCrow2 = !isStoneCrow2;
-}
-
-let images = document.querySelectorAll("#StoneCrow1");
-let blockElements = [
-  document.getElementById("show"),
-  document.getElementById("show1"),
-  document.getElementById("show2"),
-  document.getElementById("show3"),
-  document.getElementById("show4"),
-  document.getElementById("show5"),
-];
-
-let currentBlockIndex = 0;
-
-images.forEach((img) => {
-  img.addEventListener("click", function () {
-    blockElements.forEach((block) => (block.style.display = "none"));
-
-    default1.style.display = "none";
-    currentBlockIndex = (currentBlockIndex + 1) % blockElements.length;
-    StoneMake();
-
-    blockElements[currentBlockIndex].style.display = "block";
-  });
-});
-
-let default1 = document.getElementById("default");
-
-function Crowing3() {
-  if (isStoneCrow2) {
-    switchImages("StoneCrow2", "StoneCrow");
-    switchImages("StoneCrow1", "StoneImg2");
-  } else {
-    switchImages("StoneCrow1", "StoneImg2");
-    switchImages("StoneCrow2", "StoneCrow");
-  }
-
-  isStoneCrow2 = !isStoneCrow2;
-}
-
-function StoneMake() {
-  let stoneIndex = 1;
-  let ShowImg = document.getElementById("ImgShow");
+      blockElements1[0].style.display="block";
   
+      // showNextImage();
+    } else {
+      console.log("wrong");
+    }
+  });
 
-  for (let i = 0; i < stoneIndex; i++) {
-    let StoneImgs = document.createElement("img");
-    StoneImgs.src = "./Image/stone1.png";
-    StoneImgs.id = "stone" + (i + 1);
-    StoneImgs.style.position = "absolute";
 
-    let maxWidth = ShowImg.clientWidth - StoneImgs.width;
-    let maxHeight = ShowImg.clientHeight - StoneImgs.height;
 
-    StoneImgs.style.left = Math.random() * maxWidth + "px";
-    StoneImgs.style.top = Math.random() * maxHeight + "px";
 
-    ShowImg.appendChild(StoneImgs);
-  }
+
+}
+
+let potWaterElements = document.querySelectorAll(".potwater");
+
+let currentIndex1 = 0;
+
+function showNextImage() {
+  potWaterElements[currentIndex1].classList.add("hide");
+
+  currentIndex1 = (currentIndex1 + 1) % potWaterElements.length;
+
+  potWaterElements[currentIndex1].classList.remove("hide");
 }
 
 
