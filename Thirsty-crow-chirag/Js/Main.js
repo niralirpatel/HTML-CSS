@@ -70,11 +70,11 @@ function Potmaker() {
             <img id="StoneCrow1" onclick="Crowing2()" class="hide" src="./Image/stone-crow.svg">
             <img id="StoneCrow2" onclick="Crowing3()" class="hide" src="./Image/stone-crow1.svg">
              <img id="stone_set" src="./Image/stone.svg">
-             <img id="stone" src="./Image/stone1.png">
+            
              
             <img id="Pimg" src="./Image/New_folder/1.png"/>
+            <div id="ImgShow"></div>
            
-            <div id="ImgShow">
             <img id="default" src="./Image/New_folder/water_step/1.png"/>
             <img id="show" class="block" src="./Image/New_folder/water_step/2.png"/>
 
@@ -83,7 +83,7 @@ function Potmaker() {
             <img id="show3" class="block" src="./Image/New_folder/water_step/5.png"/>
             <img id="show4" class="block" src="./Image/New_folder/water_step/6.png"/>
             <img id="show5" class="block" src="./Image/New_folder/water_step/7.png"/>
-            </div>
+            
 
             </div>
             
@@ -173,21 +173,23 @@ function Crowing3() {
 
 function StoneMake() {
   let stoneIndex = 1;
-  let ShowImg=document.getElementById('ImgShow');
+  let ShowImg = document.getElementById("ImgShow");
+  
+
   for (let i = 0; i < stoneIndex; i++) {
-    
     let StoneImgs = document.createElement("img");
     StoneImgs.src = "./Image/stone1.png";
     StoneImgs.id = "stone" + (i + 1);
-    StoneImgs.style.position = 'absolute';
-    StoneImgs.style.left = Math.random() * (window.innerWidth - 0) + 'px';
-    StoneImgs.style.bottom = Math.random() * (window.innerHeight - 0) + 'px';
+    StoneImgs.style.position = "absolute";
 
-    
-     ShowImg.appendChild(StoneImgs);
+    let maxWidth = ShowImg.clientWidth - StoneImgs.width;
+    let maxHeight = ShowImg.clientHeight - StoneImgs.height;
 
+    StoneImgs.style.left = Math.random() * maxWidth + "px";
+    StoneImgs.style.top = Math.random() * maxHeight + "px";
+
+    ShowImg.appendChild(StoneImgs);
   }
 }
-
 
 
